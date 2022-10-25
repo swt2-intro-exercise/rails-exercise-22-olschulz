@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Show author page", type: :feature do
   it "should show a page with an authors first name, last name and homepage" do
+    @alan = FactoryBot.create(:author)
     visit author_path(@alan)
     expect(page).to have_text("Alan")
     expect(page).to have_text("Turing")
