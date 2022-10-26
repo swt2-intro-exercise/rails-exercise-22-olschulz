@@ -9,7 +9,7 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
 
     if @author.save
-      redirect_to root_path, notice: 'Success!'
+      redirect_to authors_url, notice: 'Success!'
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
     @author.destroy
 
-    redirect_to root_path, notice: 'Wow.'
+    redirect_to authors_url, notice: 'Deleted.'
   end
 
   private

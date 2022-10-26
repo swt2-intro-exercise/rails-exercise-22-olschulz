@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'authors/index', to: 'authors#index'
   root 'home#index'
   resources :authors
+  resources :papers
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
