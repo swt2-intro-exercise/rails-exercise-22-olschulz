@@ -2,6 +2,10 @@
 
 <%= render @paper %>
 
+<% @paper.authors.each do |author| %>
+  <p> <%= author.name %> </p>
+<% end %>
+
 <div>
   <%= link_to "Edit this paper", edit_paper_path(@paper) %> |
   <%= link_to "Back to papers", papers_path %>
