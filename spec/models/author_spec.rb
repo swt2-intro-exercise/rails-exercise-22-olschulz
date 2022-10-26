@@ -10,4 +10,8 @@ describe "Author Model", type: :model do
     it "should have a name method that returns the full name" do
         expect(author.name).to eq("Max Mustermann")
     end
+    it "must have a last name" do
+        @author = Author.new(first_name: "Test", last_name: "", homepage: "woo")
+        expect(@author).to_not be_valid
+    end
 end
